@@ -85,8 +85,11 @@
 	}
 
 	/* ── Counter Animation ────────────────────────────────────── */
+	// Targets elements with class .bb-stat-number. The number is read from
+	// the element's text content (e.g. "200+", "$500M+", "98%") so no
+	// data attributes are needed — numbers stay fully editable in Gutenberg.
 	function initCounters() {
-		const counters = $$( '.bb-counter' );
+		const counters = $$( '.bb-stat-number' );
 		if ( ! counters.length ) return;
 
 		function easeOutExpo( t ) {
@@ -94,7 +97,13 @@
 		}
 
 		function animateCounter( el ) {
-			const target   = parseInt( el.dataset.target, 10 );
+			const raw      = el.textContent.trim();
+			// Extract leading non-digit prefix (e.g. "$"), digits, and trailing suffix (e.g. "M+", "%", "+")
+			const match    = raw.match( /^([^0-9]*)(\d+)(.*)$/ );
+			if ( ! match ) return;
+			const prefix   = match[1];
+			const target   = parseInt( match[2], 10 );
+			const suffix   = match[3];
 			const duration = 1600;
 			const start    = performance.now();
 
@@ -102,7 +111,7 @@
 				const elapsed  = now - start;
 				const progress = Math.min( elapsed / duration, 1 );
 				const value    = Math.round( easeOutExpo( progress ) * target );
-				el.textContent = value.toLocaleString();
+				el.textContent = prefix + value.toLocaleString() + suffix;
 				if ( progress < 1 ) raf( update );
 			}
 			raf( update );
@@ -121,6 +130,18 @@
 		);
 
 		counters.forEach( el => observer.observe( el ) );
+	}
+
+	/* ── Scroll Indicator ─────────────────────────────────────── */
+	// Injected via JS so the hero pattern stays pure Gutenberg blocks.
+	function initScrollIndicator() {
+		const hero = $( '.bb-hero' );
+		if ( ! hero ) return;
+		const indicator = document.createElement( 'div' );
+		indicator.className = 'bb-hero__scroll-indicator';
+		indicator.setAttribute( 'aria-hidden', 'true' );
+		indicator.innerHTML = '<div class="bb-scroll-line"></div>';
+		hero.appendChild( indicator );
 	}
 
 	/* ── Word Cycling ─────────────────────────────────────────── */
@@ -333,6 +354,7 @@
 		initCursor();
 		initScrollAnimations();
 		initCounters();
+		initScrollIndicator();
 		initWordCycle();
 		initMagnetic();
 		initHeader();

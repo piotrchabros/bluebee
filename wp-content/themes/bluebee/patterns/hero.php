@@ -17,7 +17,6 @@
 		<p class="bb-hero__eyebrow bb-animate" style="font-family:var(--wp--preset--font-family--heading);font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#1B45E8;margin-bottom:2rem"><?php echo esc_html__( 'Marketing Agency · Est. 2012', 'bluebee' ); ?></p>
 		<!-- /wp:paragraph -->
 
-		<!-- The JS will split the last word into .bb-hero__word-cycle for the typing animation -->
 		<!-- wp:heading {"level":1,"className":"bb-hero__heading bb-animate bb-animate--delay-1","style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontWeight":"800","fontSize":"clamp(3.5rem,8.5vw,7.5rem)","lineHeight":"0.93","letterSpacing":"-0.035em"},"spacing":{"margin":{"bottom":"3rem"}}}} -->
 		<h1 class="wp-block-heading bb-hero__heading bb-animate bb-animate--delay-1" style="font-family:var(--wp--preset--font-family--heading);font-size:clamp(3.5rem,8.5vw,7.5rem);font-weight:800;line-height:0.93;letter-spacing:-0.035em;margin-bottom:3rem"><?php echo esc_html__( 'We Make Brands Unforgettable', 'bluebee' ); ?></h1>
 		<!-- /wp:heading -->
@@ -49,20 +48,38 @@
 			<!-- wp:column {"width":"45%","className":"bb-hero__stats"} -->
 			<div class="wp-block-column bb-hero__stats" style="flex-basis:45%">
 
-				<!-- wp:html -->
-				<div class="bb-stat-row" style="border-top:1px solid #E2DED8;padding:1.5rem 0">
-					<p class="bb-stat-number" style="font-family:var(--wp--preset--font-family--heading);font-size:clamp(2.5rem,4vw,3.5rem);font-weight:800;line-height:1;letter-spacing:-0.025em"><span class="bb-counter" data-target="200">0</span>+</p>
-					<p class="bb-stat-label" style="font-family:var(--wp--preset--font-family--heading);font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#6B6963;margin-top:0.4rem"><?php echo esc_html__( 'Clients Worldwide', 'bluebee' ); ?></p>
+				<!-- wp:group {"className":"bb-stat-row","style":{"border":{"top":{"color":"#E2DED8","width":"1px"}},"spacing":{"padding":{"top":"1.5rem","bottom":"1.5rem"}}}} -->
+				<div class="wp-block-group bb-stat-row" style="border-top:1px solid #E2DED8;padding:1.5rem 0">
+					<!-- wp:paragraph {"className":"bb-stat-number","style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontWeight":"800","fontSize":"clamp(2.5rem,4vw,3.5rem)","lineHeight":"1","letterSpacing":"-0.025em"},"spacing":{"margin":{"bottom":"0.4rem"}}}} -->
+					<p class="bb-stat-number" style="font-family:var(--wp--preset--font-family--heading);font-size:clamp(2.5rem,4vw,3.5rem);font-weight:800;line-height:1;letter-spacing:-0.025em;margin-bottom:0.4rem">200+</p>
+					<!-- /wp:paragraph -->
+					<!-- wp:paragraph {"className":"bb-stat-label","style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontSize":"0.72rem","fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"},"color":{"text":"#6B6963"}}} -->
+					<p class="bb-stat-label" style="font-family:var(--wp--preset--font-family--heading);font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#6B6963"><?php echo esc_html__( 'Clients Worldwide', 'bluebee' ); ?></p>
+					<!-- /wp:paragraph -->
 				</div>
-				<div class="bb-stat-row" style="border-top:1px solid #E2DED8;padding:1.5rem 0">
-					<p class="bb-stat-number" style="font-family:var(--wp--preset--font-family--heading);font-size:clamp(2.5rem,4vw,3.5rem);font-weight:800;line-height:1;letter-spacing:-0.025em"><span class="bb-counter" data-target="12">0</span></p>
-					<p class="bb-stat-label" style="font-family:var(--wp--preset--font-family--heading);font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#6B6963;margin-top:0.4rem"><?php echo esc_html__( 'Years of Experience', 'bluebee' ); ?></p>
+				<!-- /wp:group -->
+
+				<!-- wp:group {"className":"bb-stat-row","style":{"border":{"top":{"color":"#E2DED8","width":"1px"}},"spacing":{"padding":{"top":"1.5rem","bottom":"1.5rem"}}}} -->
+				<div class="wp-block-group bb-stat-row" style="border-top:1px solid #E2DED8;padding:1.5rem 0">
+					<!-- wp:paragraph {"className":"bb-stat-number","style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontWeight":"800","fontSize":"clamp(2.5rem,4vw,3.5rem)","lineHeight":"1","letterSpacing":"-0.025em"},"spacing":{"margin":{"bottom":"0.4rem"}}}} -->
+					<p class="bb-stat-number" style="font-family:var(--wp--preset--font-family--heading);font-size:clamp(2.5rem,4vw,3.5rem);font-weight:800;line-height:1;letter-spacing:-0.025em;margin-bottom:0.4rem">12</p>
+					<!-- /wp:paragraph -->
+					<!-- wp:paragraph {"className":"bb-stat-label","style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontSize":"0.72rem","fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"},"color":{"text":"#6B6963"}}} -->
+					<p class="bb-stat-label" style="font-family:var(--wp--preset--font-family--heading);font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#6B6963"><?php echo esc_html__( 'Years of Experience', 'bluebee' ); ?></p>
+					<!-- /wp:paragraph -->
 				</div>
-				<div class="bb-stat-row" style="border-top:1px solid #E2DED8;border-bottom:1px solid #E2DED8;padding:1.5rem 0">
-					<p class="bb-stat-number" style="font-family:var(--wp--preset--font-family--heading);font-size:clamp(2.5rem,4vw,3.5rem);font-weight:800;line-height:1;letter-spacing:-0.025em"><span class="bb-counter" data-target="98">0</span>%</p>
-					<p class="bb-stat-label" style="font-family:var(--wp--preset--font-family--heading);font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#6B6963;margin-top:0.4rem"><?php echo esc_html__( 'Client Retention Rate', 'bluebee' ); ?></p>
+				<!-- /wp:group -->
+
+				<!-- wp:group {"className":"bb-stat-row","style":{"border":{"top":{"color":"#E2DED8","width":"1px"},"bottom":{"color":"#E2DED8","width":"1px"}},"spacing":{"padding":{"top":"1.5rem","bottom":"1.5rem"}}}} -->
+				<div class="wp-block-group bb-stat-row" style="border-top:1px solid #E2DED8;border-bottom:1px solid #E2DED8;padding:1.5rem 0">
+					<!-- wp:paragraph {"className":"bb-stat-number","style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontWeight":"800","fontSize":"clamp(2.5rem,4vw,3.5rem)","lineHeight":"1","letterSpacing":"-0.025em"},"spacing":{"margin":{"bottom":"0.4rem"}}}} -->
+					<p class="bb-stat-number" style="font-family:var(--wp--preset--font-family--heading);font-size:clamp(2.5rem,4vw,3.5rem);font-weight:800;line-height:1;letter-spacing:-0.025em;margin-bottom:0.4rem">98%</p>
+					<!-- /wp:paragraph -->
+					<!-- wp:paragraph {"className":"bb-stat-label","style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontSize":"0.72rem","fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"},"color":{"text":"#6B6963"}}} -->
+					<p class="bb-stat-label" style="font-family:var(--wp--preset--font-family--heading);font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#6B6963"><?php echo esc_html__( 'Client Retention Rate', 'bluebee' ); ?></p>
+					<!-- /wp:paragraph -->
 				</div>
-				<!-- /wp:html -->
+				<!-- /wp:group -->
 
 			</div>
 			<!-- /wp:column -->
@@ -72,12 +89,6 @@
 
 	</div>
 	<!-- /wp:group -->
-
-	<!-- wp:html -->
-	<div class="bb-hero__scroll-indicator" style="display:flex;justify-content:center;padding-bottom:2.5rem">
-		<div class="bb-scroll-line" aria-hidden="true"></div>
-	</div>
-	<!-- /wp:html -->
 
 </section>
 <!-- /wp:group -->

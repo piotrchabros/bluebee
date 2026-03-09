@@ -215,6 +215,42 @@ function bluebee_register_post_types() {
 add_action( 'init', 'bluebee_register_post_types' );
 
 /* =========================================================
+   5. REGISTER POST META FOR REST / BLOCK EDITOR
+   ========================================================= */
+
+function bluebee_register_meta() {
+	// bb_service icon (Unicode symbol)
+	register_post_meta( 'bb_service', '_bb_icon', array(
+		'show_in_rest'  => true,
+		'single'        => true,
+		'type'          => 'string',
+		'default'       => '◎',
+		'auth_callback' => function() { return current_user_can( 'edit_posts' ); },
+	) );
+
+	// bb_service display order
+	register_post_meta( 'bb_service', '_bb_order', array(
+		'show_in_rest'  => true,
+		'single'        => true,
+		'type'          => 'integer',
+		'default'       => 0,
+		'auth_callback' => function() { return current_user_can( 'edit_posts' ); },
+	) );
+
+	// bb_testimonial author fields
+	foreach ( array( '_bb_author_name', '_bb_author_title', '_bb_author_company' ) as $key ) {
+		register_post_meta( 'bb_testimonial', $key, array(
+			'show_in_rest'  => true,
+			'single'        => true,
+			'type'          => 'string',
+			'default'       => '',
+			'auth_callback' => function() { return current_user_can( 'edit_posts' ); },
+		) );
+	}
+}
+add_action( 'init', 'bluebee_register_meta' );
+
+/* =========================================================
    5. CUSTOM TAXONOMIES
    ========================================================= */
 

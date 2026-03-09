@@ -772,6 +772,7 @@ a { transition: color var(--bb-duration-fast) var(--bb-ease); }
 
 /* ── Utility Classes ─────────────────────────────────────────── */
 .bb-section { position: relative; }
+.bb-section__subtitle { max-width: 34ch; }
 .bb-container { width: 100%; max-width: var(--bb-container); margin-inline: auto; }
 
 /* ── Responsive ──────────────────────────────────────────────── */

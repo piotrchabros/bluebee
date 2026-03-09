@@ -50,10 +50,14 @@ foreach ( $keywords as $kw ) {
 // Duplicate for seamless infinite loop.
 $track = $inner . $inner;
 ?>
-<!-- wp:html -->
-<section class="bb-marquee bb-section" aria-label="<?php echo esc_attr__( 'Our Services', 'bluebee' ); ?>" style="overflow:hidden;border-top:1px solid #E2DED8;border-bottom:1px solid #E2DED8;background:#FFFFFF;padding:1.25rem 0">
+<!-- wp:group {"tagName":"section","align":"full","className":"bb-marquee bb-section","style":{"color":{"background":"var:preset|color|white"},"border":{"top":{"color":"var:preset|color|border","width":"1px","style":"solid"},"bottom":{"color":"var:preset|color|border","width":"1px","style":"solid"}},"spacing":{"padding":{"top":"1.25rem","bottom":"1.25rem","left":"0","right":"0"}}},"layout":{"type":"default"}} -->
+<section class="wp-block-group alignfull bb-marquee bb-section has-background" style="background-color:var(--wp--preset--color--white);border-top-color:var(--wp--preset--color--border);border-top-width:1px;border-top-style:solid;border-bottom-color:var(--wp--preset--color--border);border-bottom-width:1px;border-bottom-style:solid;padding-top:1.25rem;padding-bottom:1.25rem;padding-left:0;padding-right:0">
+
+	<!-- wp:html -->
 	<div class="bb-marquee__track" aria-hidden="true">
 		<?php echo $track; ?>
 	</div>
+	<!-- /wp:html -->
+
 </section>
-<!-- /wp:html -->
+<!-- /wp:group -->

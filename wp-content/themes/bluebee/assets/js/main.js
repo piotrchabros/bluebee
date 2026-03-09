@@ -125,7 +125,21 @@
 
 	/* ── Word Cycling ─────────────────────────────────────────── */
 	function initWordCycle() {
-		const el = $( '.bb-hero__word-cycle' );
+		// The heading renders as plain text from the block; we inject the
+		// animated span by splitting off the last word at runtime.
+		const heading = $( '.bb-hero__heading' );
+		if ( ! heading ) return;
+
+		// Split "We Make Brands Unforgettable" → keep first part, animate last word
+		const text  = heading.textContent.trim();
+		const parts = text.split( ' ' );
+		const last  = parts.pop();
+		const rest  = parts.join( ' ' );
+
+		heading.innerHTML =
+			rest + '<br><span class="bb-hero__word-cycle" aria-live="polite">' + last + '</span>';
+
+		const el = $( '.bb-hero__word-cycle', heading );
 		if ( ! el ) return;
 
 		const words = [

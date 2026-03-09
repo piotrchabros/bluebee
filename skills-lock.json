@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "wordpress-gutenberg-expert": {
+      "source": "truchot/claude-skills-test",
+      "sourceType": "github",
+      "computedHash": "02bc5798ec7da5d7bebf9a65bce0df9fc421eeb519f828468c0031e95cea8867"
+    }
+  }
+}

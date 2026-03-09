@@ -70,39 +70,43 @@ if ( empty( $services ) ) {
 
 $cols = min( count( $services ), 4 );
 ?>
-<!-- wp:group {"tagName":"section","align":"full","className":"bb-services bb-section","id":"services","style":{"color":{"background":"#F7F4EF"},"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80","left":"var:preset|spacing|60","right":"var:preset|spacing|60"}}},"layout":{"type":"constrained","wideSize":"1280px"}} -->
-<section class="wp-block-group alignfull bb-services bb-section" id="services" style="background-color:#F7F4EF;padding:var(--wp--preset--spacing--80) var(--wp--preset--spacing--60)">
+<!-- wp:group {"tagName":"section","align":"full","className":"bb-services bb-section","anchor":"services","style":{"color":{"background":"var:preset|color|cream"},"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80","left":"var:preset|spacing|60","right":"var:preset|spacing|60"}}},"layout":{"type":"constrained","wideSize":"1280px"}} -->
+<section class="wp-block-group alignfull bb-services bb-section has-background" id="services" style="background-color:var(--wp--preset--color--cream);padding-top:var(--wp--preset--spacing--80);padding-right:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--80);padding-left:var(--wp--preset--spacing--60)">
 
 	<!-- wp:group {"className":"bb-section__header bb-animate","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|70"}}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"flex-end"}} -->
 	<div class="wp-block-group bb-section__header bb-animate" style="margin-bottom:var(--wp--preset--spacing--70)">
 		<!-- wp:group -->
 		<div class="wp-block-group">
-			<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontWeight":"600","fontSize":"0.72rem","letterSpacing":"0.18em","textTransform":"uppercase"},"color":{"text":"#1B45E8"},"spacing":{"margin":{"bottom":"0.75rem"}}}} -->
-			<p style="font-family:var(--wp--preset--font-family--heading);font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#1B45E8;margin-bottom:0.75rem"><?php echo esc_html__( 'What We Do', 'bluebee' ); ?></p>
+			<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontWeight":"600","fontSize":"0.72rem","letterSpacing":"0.18em","textTransform":"uppercase"},"color":{"text":"var:preset|color|blue"},"spacing":{"margin":{"bottom":"0.75rem"}}}} -->
+			<p class="has-text-color" style="font-family:var(--wp--preset--font-family--heading);font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--wp--preset--color--blue);margin-bottom:0.75rem"><?php echo esc_html__( 'What We Do', 'bluebee' ); ?></p>
 			<!-- /wp:paragraph -->
 			<!-- wp:heading {"level":2,"style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontWeight":"800","fontSize":"clamp(2.5rem,5vw,4rem)","lineHeight":"0.95","letterSpacing":"-0.03em"}}} -->
 			<h2 class="wp-block-heading" style="font-family:var(--wp--preset--font-family--heading);font-size:clamp(2.5rem,5vw,4rem);font-weight:800;line-height:0.95;letter-spacing:-0.03em"><?php echo esc_html__( 'Services that move markets', 'bluebee' ); ?></h2>
 			<!-- /wp:heading -->
 		</div>
 		<!-- /wp:group -->
-		<!-- wp:paragraph {"style":{"typography":{"fontSize":"1rem","lineHeight":"1.65"},"color":{"text":"#6B6963"}}} -->
-		<p style="font-size:1rem;line-height:1.65;color:#6B6963;max-width:34ch"><?php echo esc_html__( 'End-to-end brand and marketing solutions built for growth-oriented businesses.', 'bluebee' ); ?></p>
-		<!-- /wp:paragraph -->
+		<!-- wp:group {"layout":{"type":"constrained","wideSize":"34ch"},"style":{"spacing":{"blockGap":"0"}}} -->
+		<div class="wp-block-group">
+			<!-- wp:paragraph {"style":{"typography":{"fontSize":"1rem","lineHeight":"1.65"},"color":{"text":"var:preset|color|gray"}}} -->
+			<p class="has-text-color" style="font-size:1rem;line-height:1.65;color:var(--wp--preset--color--gray)"><?php echo esc_html__( 'End-to-end brand and marketing solutions built for growth-oriented businesses.', 'bluebee' ); ?></p>
+			<!-- /wp:paragraph -->
+		</div>
+		<!-- /wp:group -->
 	</div>
 	<!-- /wp:group -->
 
 	<!-- wp:html -->
 	<div class="bb-services__grid" style="display:grid;grid-template-columns:repeat(<?php echo esc_attr( $cols ); ?>,1fr);gap:0">
 		<?php foreach ( $services as $i => $svc ) : ?>
-		<div class="bb-service-card bb-animate bb-animate--delay-<?php echo min( $i + 1, 4 ); ?>" style="padding:2.5rem 2rem;border-left:1px solid #E2DED8;position:relative">
+		<div class="bb-service-card bb-animate" style="--bb-delay:<?php echo $i * 0.1; ?>s;padding:2.5rem 2rem;border-left:1px solid var(--wp--preset--color--border);position:relative">
 			<div style="display:flex;justify-content:space-between;margin-bottom:2rem">
 				<span style="font-size:1.5rem;line-height:1" aria-hidden="true"><?php echo esc_html( $svc['icon'] ); ?></span>
 				<span style="font-family:var(--wp--preset--font-family--heading);font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#C8C5BF"><?php echo esc_html( $svc['num'] ); ?></span>
 			</div>
 			<h3 style="font-family:var(--wp--preset--font-family--heading);font-size:1.2rem;font-weight:700;line-height:1.2;letter-spacing:-0.01em;margin-bottom:1rem"><?php echo esc_html( $svc['title'] ); ?></h3>
-			<p style="font-size:0.9rem;line-height:1.7;color:#6B6963"><?php echo esc_html( $svc['text'] ); ?></p>
+			<p style="font-size:0.9rem;line-height:1.7;color:var(--wp--preset--color--gray)"><?php echo esc_html( $svc['text'] ); ?></p>
 			<p style="margin-top:2rem">
-				<a href="<?php echo esc_url( $svc['link'] ); ?>" style="font-family:var(--wp--preset--font-family--heading);font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#1B45E8;text-decoration:none">
+				<a href="<?php echo esc_url( $svc['link'] ); ?>" style="font-family:var(--wp--preset--font-family--heading);font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--wp--preset--color--blue);text-decoration:none">
 					<?php echo esc_html__( 'Learn More →', 'bluebee' ); ?>
 				</a>
 			</p>

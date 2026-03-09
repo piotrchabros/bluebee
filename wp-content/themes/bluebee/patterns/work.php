@@ -7,8 +7,8 @@
  * Keywords: portfolio, work, projects, case studies
  */
 ?>
-<!-- wp:group {"tagName":"section","align":"full","className":"bb-work bb-section","id":"work","style":{"color":{"background":"#FFFFFF"},"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80","left":"var:preset|spacing|60","right":"var:preset|spacing|60"}}},"layout":{"type":"constrained","wideSize":"1280px"}} -->
-<section class="wp-block-group alignfull bb-work bb-section" id="work" style="background-color:#FFFFFF;padding:var(--wp--preset--spacing--80) var(--wp--preset--spacing--60)">
+<!-- wp:group {"tagName":"section","align":"full","className":"bb-work bb-section","anchor":"work","style":{"color":{"background":"var:preset|color|white"},"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80","left":"var:preset|spacing|60","right":"var:preset|spacing|60"}}},"layout":{"type":"constrained","wideSize":"1280px"}} -->
+<section class="wp-block-group alignfull bb-work bb-section has-background" id="work" style="background-color:var(--wp--preset--color--white);padding-top:var(--wp--preset--spacing--80);padding-right:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--80);padding-left:var(--wp--preset--spacing--60)">
 
 	<!-- wp:group {"className":"bb-section__header bb-animate","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|60"}}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"flex-end"}} -->
 	<div class="wp-block-group bb-section__header bb-animate" style="margin-bottom:var(--wp--preset--spacing--60)">
@@ -42,6 +42,7 @@
 		'post_status'    => 'publish',
 		'orderby'        => 'menu_order',
 		'order'          => 'ASC',
+		'no_found_rows'  => true,
 	) );
 
 	if ( $work_query->have_posts() ) :

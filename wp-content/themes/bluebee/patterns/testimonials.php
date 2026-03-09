@@ -19,7 +19,7 @@ if ( $tq->have_posts() ) {
 	while ( $tq->have_posts() ) {
 		$tq->the_post();
 		$testimonials[] = array(
-			'quote'   => get_the_content(),
+			'quote'   => wp_strip_all_tags( get_the_content() ),
 			'name'    => get_post_meta( get_the_ID(), '_bb_author_name', true )    ?: get_the_title(),
 			'title'   => get_post_meta( get_the_ID(), '_bb_author_title', true )   ?: '',
 			'company' => get_post_meta( get_the_ID(), '_bb_author_company', true ) ?: '',
@@ -54,15 +54,15 @@ if ( $tq->have_posts() ) {
 	);
 }
 ?>
-<!-- wp:group {"tagName":"section","align":"full","className":"bb-testimonials bb-section","id":"clients","style":{"color":{"background":"#F7F4EF"},"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80","left":"var:preset|spacing|60","right":"var:preset|spacing|60"}}},"layout":{"type":"constrained","wideSize":"1280px"}} -->
-<section class="wp-block-group alignfull bb-testimonials bb-section" id="clients" style="background-color:#F7F4EF;padding:var(--wp--preset--spacing--80) var(--wp--preset--spacing--60)">
+<!-- wp:group {"tagName":"section","align":"full","className":"bb-testimonials bb-section","anchor":"clients","style":{"color":{"background":"var:preset|color|cream"},"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80","left":"var:preset|spacing|60","right":"var:preset|spacing|60"}}},"layout":{"type":"constrained","wideSize":"1280px"}} -->
+<section class="wp-block-group alignfull bb-testimonials bb-section has-background" id="clients" style="background-color:var(--wp--preset--color--cream);padding-top:var(--wp--preset--spacing--80);padding-right:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--80);padding-left:var(--wp--preset--spacing--60)">
 
 	<!-- wp:group {"className":"bb-section__header bb-animate","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|70"}}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"flex-end"}} -->
 	<div class="wp-block-group bb-section__header bb-animate" style="margin-bottom:var(--wp--preset--spacing--70)">
 		<!-- wp:group -->
 		<div class="wp-block-group">
-			<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontWeight":"600","fontSize":"0.72rem","letterSpacing":"0.18em","textTransform":"uppercase"},"color":{"text":"#1B45E8"},"spacing":{"margin":{"bottom":"0.75rem"}}}} -->
-			<p style="font-family:var(--wp--preset--font-family--heading);font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#1B45E8;margin-bottom:0.75rem"><?php echo esc_html__( 'Client Love', 'bluebee' ); ?></p>
+			<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontWeight":"600","fontSize":"0.72rem","letterSpacing":"0.18em","textTransform":"uppercase"},"color":{"text":"var:preset|color|blue"},"spacing":{"margin":{"bottom":"0.75rem"}}}} -->
+			<p class="has-text-color" style="font-family:var(--wp--preset--font-family--heading);font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--wp--preset--color--blue);margin-bottom:0.75rem"><?php echo esc_html__( 'Client Love', 'bluebee' ); ?></p>
 			<!-- /wp:paragraph -->
 			<!-- wp:heading {"level":2,"style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontWeight":"800","fontSize":"clamp(2.5rem,5vw,4rem)","lineHeight":"0.95","letterSpacing":"-0.03em"}}} -->
 			<h2 class="wp-block-heading" style="font-family:var(--wp--preset--font-family--heading);font-size:clamp(2.5rem,5vw,4rem);font-weight:800;line-height:0.95;letter-spacing:-0.03em"><?php echo esc_html__( 'What they say', 'bluebee' ); ?></h2>

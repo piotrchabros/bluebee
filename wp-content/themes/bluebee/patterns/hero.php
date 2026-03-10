@@ -10,7 +10,7 @@
 <!-- wp:group {"tagName":"section","anchor":"home","align":"full","className":"bb-hero bb-section","style":{"color":{"background":"var:preset|color|cream"},"spacing":{"padding":{"top":"0","right":"0","bottom":"0","left":"0"},"margin":{"top":"0"}}},"layout":{"type":"default"}} -->
 <section class="wp-block-group alignfull bb-hero bb-section has-background" id="home" style="background-color:var(--wp--preset--color--cream);padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;margin-top:0">
 
-	<!-- wp:group {"className":"bb-hero__inner","style":{"spacing":{"padding":{"top":"10vh","right":"var:preset|spacing|60","bottom":"10vh","left":"var:preset|spacing|60"}}},"layout":{"type":"constrained","wideSize":"1280px"}} -->
+	<!-- wp:group {"className":"bb-hero__inner","style":{"spacing":{"padding":{"top":"10vh","right":"var:preset|spacing|60","bottom":"10vh","left":"var:preset|spacing|60"}}},"layout":{"type":"default"}} -->
 	<div class="wp-block-group bb-hero__inner" style="padding-top:10vh;padding-right:var(--wp--preset--spacing--60);padding-bottom:10vh;padding-left:var(--wp--preset--spacing--60)">
 
 		<!-- wp:paragraph {"className":"bb-hero__eyebrow bb-animate","style":{"typography":{"fontWeight":"600","fontSize":"0.72rem","letterSpacing":"0.18em","textTransform":"uppercase"},"color":{"text":"var:preset|color|blue"},"spacing":{"margin":{"bottom":"2rem"}}}} -->

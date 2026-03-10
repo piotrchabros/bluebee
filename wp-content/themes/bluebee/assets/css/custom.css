@@ -52,9 +52,8 @@ html {
 }
 
 body {
-	font-family: var(--bb-font-body);
-	background-color: var(--bb-cream);
-	color: var(--bb-black);
+	/* font-family, color, background-color are set by theme.json styles
+	   and overridden by Global Styles — do NOT redeclare them here */
 	overflow-x: hidden;
 }
 

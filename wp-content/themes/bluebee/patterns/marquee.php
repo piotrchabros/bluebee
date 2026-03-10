@@ -42,22 +42,23 @@ if ( empty( $keywords ) ) {
 	);
 }
 
-$star  = '<span class="bb-marquee__star" aria-hidden="true">✦</span>';
-$inner = '';
+// Generate block markup for each item.
+// JS (initMarquee) duplicates the items at runtime for seamless looping.
+$items_markup = '';
 foreach ( $keywords as $kw ) {
-	$inner .= '<span class="bb-marquee__item">' . esc_html( $kw ) . '</span>' . $star;
+	$items_markup .= "\n\t\t<!-- wp:paragraph {\"className\":\"bb-marquee__item\"} -->";
+	$items_markup .= "\n\t\t<p class=\"wp-block-paragraph bb-marquee__item\">" . esc_html( $kw ) . " <span class=\"bb-marquee__star\" aria-hidden=\"true\">\u{2736}</span></p>";
+	$items_markup .= "\n\t\t<!-- /wp:paragraph -->";
 }
-// Duplicate for seamless infinite loop.
-$track = $inner . $inner;
 ?>
 <!-- wp:group {"tagName":"section","align":"full","className":"bb-marquee bb-section","style":{"color":{"background":"var:preset|color|white"},"border":{"top":{"color":"var:preset|color|border","width":"1px","style":"solid"},"bottom":{"color":"var:preset|color|border","width":"1px","style":"solid"}},"spacing":{"padding":{"top":"1.25rem","bottom":"1.25rem","left":"0","right":"0"}}},"layout":{"type":"default"}} -->
 <section class="wp-block-group alignfull bb-marquee bb-section has-background" style="background-color:var(--wp--preset--color--white);border-top-color:var(--wp--preset--color--border);border-top-width:1px;border-top-style:solid;border-bottom-color:var(--wp--preset--color--border);border-bottom-width:1px;border-bottom-style:solid;padding-top:1.25rem;padding-bottom:1.25rem;padding-left:0;padding-right:0">
 
-	<!-- wp:html -->
-	<div class="bb-marquee__track" aria-hidden="true">
-		<?php echo $track; ?>
+	<!-- wp:group {"className":"bb-marquee__track","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+	<div class="wp-block-group bb-marquee__track">
+		<?php echo $items_markup; ?>
 	</div>
-	<!-- /wp:html -->
+	<!-- /wp:group -->
 
 </section>
 <!-- /wp:group -->

@@ -24,8 +24,8 @@
 	<div class="wp-block-group bb-header__actions" style="gap:1rem">
 		<!-- wp:buttons -->
 		<div class="wp-block-buttons">
-			<!-- wp:button {"className":"bb-btn-primary bb-btn-sm","style":{"color":{"background":"#1B45E8","text":"#FFFFFF"},"border":{"radius":"0px"},"spacing":{"padding":{"top":"0.65rem","bottom":"0.65rem","left":"1.5rem","right":"1.5rem"}},"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontWeight":"600","fontSize":"0.72rem","letterSpacing":"0.1em","textTransform":"uppercase"}}} -->
-			<div class="wp-block-button bb-btn-primary bb-btn-sm"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="#contact" style="background-color:#1B45E8;color:#FFFFFF;border-radius:0;padding:0.65rem 1.5rem;font-family:var(--wp--preset--font-family--heading);font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase"><?php echo esc_html__( 'Start a Project', 'bluebee' ); ?></a></div>
+			<!-- wp:button {"className":"bb-btn-primary bb-btn-sm"} -->
+			<div class="wp-block-button bb-btn-primary bb-btn-sm"><a class="wp-block-button__link wp-element-button" href="#contact"><?php echo esc_html__( 'Start a Project', 'bluebee' ); ?></a></div>
 			<!-- /wp:button -->
 		</div>
 		<!-- /wp:buttons -->

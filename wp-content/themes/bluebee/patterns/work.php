@@ -15,7 +15,7 @@
 		<!-- wp:group -->
 		<div class="wp-block-group">
 			<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontWeight":"600","fontSize":"0.72rem","letterSpacing":"0.18em","textTransform":"uppercase"},"color":{"text":"#1B45E8"},"spacing":{"margin":{"bottom":"0.75rem"}}}} -->
-			<p style="font-family:var(--wp--preset--font-family--heading);font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#1B45E8;margin-bottom:0.75rem"><?php echo esc_html__( 'Selected Work', 'bluebee' ); ?></p>
+			<p class="has-text-color" style="font-family:var(--wp--preset--font-family--heading);font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#1B45E8;margin-bottom:0.75rem"><?php echo esc_html__( 'Selected Work', 'bluebee' ); ?></p>
 			<!-- /wp:paragraph -->
 			<!-- wp:heading {"level":2,"style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontWeight":"800","fontSize":"clamp(2.5rem,5vw,4rem)","lineHeight":"0.95","letterSpacing":"-0.03em"}}} -->
 			<h2 class="wp-block-heading" style="font-family:var(--wp--preset--font-family--heading);font-size:clamp(2.5rem,5vw,4rem);font-weight:800;line-height:0.95;letter-spacing:-0.03em"><?php echo esc_html__( 'Stories we\'ve shaped', 'bluebee' ); ?></h2>
@@ -24,100 +24,64 @@
 		<!-- /wp:group -->
 		<!-- wp:buttons -->
 		<div class="wp-block-buttons">
-			<!-- wp:button {"className":"bb-btn-ghost bb-magnetic","style":{"color":{"text":"#0C0C0A"},"border":{"radius":"0px","width":"1.5px","color":"#0C0C0A"},"spacing":{"padding":{"top":"0.8rem","bottom":"0.8rem","left":"2rem","right":"2rem"}},"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontWeight":"600","fontSize":"0.75rem","letterSpacing":"0.1em","textTransform":"uppercase"}}} -->
-			<div class="wp-block-button bb-btn-ghost is-style-outline bb-magnetic"><a class="wp-block-button__link has-text-color wp-element-button" href="/work" style="color:#0C0C0A;border-radius:0;border:1.5px solid #0C0C0A;padding:0.8rem 2rem;font-family:var(--wp--preset--font-family--heading);font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase"><?php echo esc_html__( 'All Projects', 'bluebee' ); ?></a></div>
+			<!-- wp:button {"className":"bb-btn-ghost bb-magnetic"} -->
+			<div class="wp-block-button bb-btn-ghost is-style-outline bb-magnetic"><a class="wp-block-button__link wp-element-button" href="/work"><?php echo esc_html__( 'All Projects', 'bluebee' ); ?></a></div>
 			<!-- /wp:button -->
 		</div>
 		<!-- /wp:buttons -->
 	</div>
 	<!-- /wp:group -->
 
-	<!-- Dynamic portfolio from Work CPT -->
-	<!-- wp:html -->
-	<div class="bb-work__grid" id="bb-work-grid">
-	<?php
-	$work_query = new WP_Query( array(
-		'post_type'      => 'bb_work',
-		'posts_per_page' => 6,
-		'post_status'    => 'publish',
-		'orderby'        => 'menu_order',
-		'order'          => 'ASC',
-		'no_found_rows'  => true,
-	) );
+	<!-- wp:query {"queryId":11,"query":{"postType":"bb_work","perPage":6,"orderBy":"menu_order","order":"asc","inherit":false},"className":"bb-work-query"} -->
+	<div class="wp-block-query bb-work-query">
 
-	if ( $work_query->have_posts() ) :
-		$positions = array( 'large', 'medium', 'medium', 'medium', 'medium', 'large' );
-		$i         = 0;
-		while ( $work_query->have_posts() ) :
-			$work_query->the_post();
-			$client   = get_post_meta( get_the_ID(), '_bb_client', true );
-			$year     = get_post_meta( get_the_ID(), '_bb_year', true );
-			$services = get_post_meta( get_the_ID(), '_bb_services', true );
-			$proj_url = get_post_meta( get_the_ID(), '_bb_project_url', true );
-			$link     = $proj_url ?: get_permalink();
-			$size     = isset( $positions[ $i ] ) ? $positions[ $i ] : 'medium';
-			$cats     = get_the_terms( get_the_ID(), 'bb_work_category' );
-			$cat_name = ( $cats && ! is_wp_error( $cats ) ) ? esc_html( $cats[0]->name ) : esc_html( $services );
-			?>
-			<article class="bb-work__card bb-work__card--<?php echo esc_attr( $size ); ?> bb-animate" style="--bb-delay:<?php echo $i * 0.1; ?>s">
-				<a href="<?php echo esc_url( $link ); ?>" class="bb-work__card-inner">
-					<?php if ( has_post_thumbnail() ) : ?>
-					<div class="bb-work__card-img">
-						<?php the_post_thumbnail( 'bluebee-card', array( 'loading' => 'lazy' ) ); ?>
-					</div>
-					<?php else : ?>
-					<div class="bb-work__card-img bb-work__card-img--placeholder" aria-hidden="true"></div>
-					<?php endif; ?>
-					<div class="bb-work__card-info">
-						<div class="bb-work__card-meta">
-							<?php if ( $cat_name ) : ?>
-							<span class="bb-tag"><?php echo esc_html( $cat_name ); ?></span>
-							<?php endif; ?>
-							<?php if ( $year ) : ?>
-							<span class="bb-work__card-year"><?php echo esc_html( $year ); ?></span>
-							<?php endif; ?>
+		<!-- wp:post-template {"className":"bb-work__grid","layout":{"type":"grid","columnCount":3}} -->
+
+			<!-- wp:group {"tagName":"article","className":"bb-work__card bb-animate","layout":{"type":"default"}} -->
+			<article class="wp-block-group bb-work__card bb-animate">
+
+				<!-- wp:group {"className":"bb-work__card-inner","layout":{"type":"default"}} -->
+				<div class="wp-block-group bb-work__card-inner">
+
+					<!-- wp:post-featured-image {"isLink":true,"className":"bb-work__card-img","aspectRatio":"4/3","linkTarget":"_self"} /-->
+
+					<!-- wp:group {"className":"bb-work__card-info","layout":{"type":"flex","orientation":"vertical","justifyContent":"flex-end"}} -->
+					<div class="wp-block-group bb-work__card-info">
+
+						<!-- wp:group {"className":"bb-work__card-meta","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+						<div class="wp-block-group bb-work__card-meta">
+							<!-- wp:post-terms {"term":"bb_work_category","className":"bb-tag","separator":" "} /-->
+							<!-- wp:post-meta {"fieldName":"_bb_year","showLabel":false,"className":"bb-work__card-year"} /-->
 						</div>
-						<h3 class="bb-work__card-title">
-							<?php echo esc_html( $client ?: get_the_title() ); ?>
-						</h3>
-						<p class="bb-work__card-excerpt"><?php echo esc_html( get_the_title() ); ?></p>
-						<span class="bb-work__card-arrow" aria-hidden="true">→</span>
+						<!-- /wp:group -->
+
+						<!-- wp:post-meta {"fieldName":"_bb_client","showLabel":false,"className":"bb-work__card-title"} /-->
+
+						<!-- wp:post-title {"level":3,"isLink":true,"className":"bb-work__card-excerpt","style":{"typography":{"fontSize":"0.85rem"}}} /-->
+
+						<!-- wp:paragraph {"className":"bb-work__card-arrow"} -->
+						<p class="wp-block-paragraph bb-work__card-arrow" aria-hidden="true">→</p>
+						<!-- /wp:paragraph -->
+
 					</div>
-				</a>
-			</article>
-			<?php
-			$i++;
-		endwhile;
-		wp_reset_postdata();
-	else :
-		// Placeholder cards when no work posts exist
-		$placeholders = array(
-			array( 'title' => __( 'Nova Skincare — Rebrand', 'bluebee' ),       'cat' => __( 'Branding', 'bluebee' ),         'size' => 'large',  'year' => '2024' ),
-			array( 'title' => __( 'Apex Finance — Campaign', 'bluebee' ),       'cat' => __( 'Strategy', 'bluebee' ),         'size' => 'medium', 'year' => '2024' ),
-			array( 'title' => __( 'Luma Coffee — Identity', 'bluebee' ),        'cat' => __( 'Creative', 'bluebee' ),         'size' => 'medium', 'year' => '2023' ),
-			array( 'title' => __( 'Drift Apparel — Digital', 'bluebee' ),       'cat' => __( 'Digital', 'bluebee' ),          'size' => 'medium', 'year' => '2023' ),
-			array( 'title' => __( 'Bloom Health — Performance', 'bluebee' ),    'cat' => __( 'Performance', 'bluebee' ),      'size' => 'medium', 'year' => '2023' ),
-			array( 'title' => __( 'Vault Tech — Launch', 'bluebee' ),           'cat' => __( 'Strategy', 'bluebee' ),         'size' => 'large',  'year' => '2022' ),
-		);
-		foreach ( $placeholders as $j => $ph ) : ?>
-		<article class="bb-work__card bb-work__card--<?php echo esc_attr( $ph['size'] ); ?> bb-animate" style="--bb-delay:<?php echo $j * 0.1; ?>s">
-			<a href="/work" class="bb-work__card-inner">
-				<div class="bb-work__card-img bb-work__card-img--placeholder" aria-hidden="true"></div>
-				<div class="bb-work__card-info">
-					<div class="bb-work__card-meta">
-						<span class="bb-tag"><?php echo esc_html( $ph['cat'] ); ?></span>
-						<span class="bb-work__card-year"><?php echo esc_html( $ph['year'] ); ?></span>
-					</div>
-					<h3 class="bb-work__card-title"><?php echo esc_html( $ph['title'] ); ?></h3>
-					<span class="bb-work__card-arrow" aria-hidden="true">→</span>
+					<!-- /wp:group -->
+
 				</div>
-			</a>
-		</article>
-		<?php endforeach;
-	endif;
-	?>
+				<!-- /wp:group -->
+
+			</article>
+			<!-- /wp:group -->
+
+		<!-- /wp:post-template -->
+
+		<!-- wp:query-no-results -->
+		<!-- wp:paragraph {"style":{"typography":{"fontSize":"1rem"},"color":{"text":"var:preset|color|gray"},"spacing":{"padding":{"top":"4rem","bottom":"4rem"}}}} -->
+		<p class="has-text-color" style="font-size:1rem;color:var(--wp--preset--color--gray);padding-top:4rem;padding-bottom:4rem"><?php echo esc_html__( 'No projects published yet.', 'bluebee' ); ?></p>
+		<!-- /wp:paragraph -->
+		<!-- /wp:query-no-results -->
+
 	</div>
-	<!-- /wp:html -->
+	<!-- /wp:query -->
 
 </section>
 <!-- /wp:group -->

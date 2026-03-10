@@ -132,6 +132,23 @@
 		counters.forEach( el => observer.observe( el ) );
 	}
 
+	/* ── Marquee Duplication ──────────────────────────────────── */
+	// Items are authored as wp:paragraph blocks (one set).
+	// JS clones them into a second set (aria-hidden) so the CSS
+	// translateX(-50%) animation loops seamlessly.
+	function initMarquee() {
+		$$( '.bb-marquee__track' ).forEach( function ( track ) {
+			if ( track.dataset.marqueeInit ) return;
+			var children = Array.from( track.children );
+			children.forEach( function ( child ) {
+				var clone = child.cloneNode( true );
+				clone.setAttribute( 'aria-hidden', 'true' );
+				track.appendChild( clone );
+			} );
+			track.dataset.marqueeInit = '1';
+		} );
+	}
+
 	/* ── Scroll Indicator ─────────────────────────────────────── */
 	// Injected via JS so the hero pattern stays pure Gutenberg blocks.
 	function initScrollIndicator() {
@@ -354,6 +371,7 @@
 		initCursor();
 		initScrollAnimations();
 		initCounters();
+		initMarquee();
 		initScrollIndicator();
 		initWordCycle();
 		initMagnetic();

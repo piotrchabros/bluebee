@@ -247,6 +247,25 @@ function bluebee_register_meta() {
 			'auth_callback' => function() { return current_user_can( 'edit_posts' ); },
 		) );
 	}
+
+	// bb_work meta fields — required for wp:post-meta in Query Loop
+	foreach ( array( '_bb_client', '_bb_year', '_bb_services', '_bb_color' ) as $key ) {
+		register_post_meta( 'bb_work', $key, array(
+			'show_in_rest'  => true,
+			'single'        => true,
+			'type'          => 'string',
+			'default'       => '',
+			'auth_callback' => function() { return current_user_can( 'edit_posts' ); },
+		) );
+	}
+	register_post_meta( 'bb_work', '_bb_project_url', array(
+		'show_in_rest'      => true,
+		'single'            => true,
+		'type'              => 'string',
+		'default'           => '',
+		'sanitize_callback' => 'esc_url_raw',
+		'auth_callback'     => function() { return current_user_can( 'edit_posts' ); },
+	) );
 }
 add_action( 'init', 'bluebee_register_meta' );
 

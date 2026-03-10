@@ -879,11 +879,7 @@ a { transition: color var(--bb-duration-fast) var(--bb-ease); }
 
 	.bb-hero__inner { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
 
-	.bb-hero__bottom .wp-block-columns { flex-direction: column; }
-	.bb-hero__bottom .wp-block-column { flex-basis: 100% !important; }
-	.bb-hero__stats { margin-top: 2rem; }
-
-	.bb-services__grid { grid-template-columns: 1fr !important; }
+.bb-services__grid { grid-template-columns: 1fr !important; }
 	.bb-service-card { border-left: none !important; border-top: 1px solid var(--bb-border); }
 
 	.bb-work__grid { grid-template-columns: 1fr; }

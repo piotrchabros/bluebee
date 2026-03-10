@@ -57,75 +57,106 @@
 		<!-- /wp:post-template -->
 
 		<!-- wp:query-no-results -->
-		<?php
-		$fallback_testimonials = array(
-			array(
-				'quote'   => __( 'Bluebee transformed how our audience sees us. The rebrand drove a 60% increase in brand recall within three months of launch — results we never thought possible.', 'bluebee' ),
-				'name'    => __( 'Sarah Mitchell', 'bluebee' ),
-				'role'    => __( 'Chief Marketing Officer, Nova Skincare', 'bluebee' ),
-				'initial' => 'S',
-			),
-			array(
-				'quote'   => __( 'The team\'s strategic thinking is unmatched. They don\'t just execute — they challenge your assumptions and push your brand further than you thought you could go.', 'bluebee' ),
-				'name'    => __( 'James Park', 'bluebee' ),
-				'role'    => __( 'Founder & CEO, Vault Technologies', 'bluebee' ),
-				'initial' => 'J',
-			),
-			array(
-				'quote'   => __( 'Working with Bluebee was the best decision we made all year. Our digital campaigns are now generating 3× the ROI of anything we ran before. Exceptional.', 'bluebee' ),
-				'name'    => __( 'Elena Torres', 'bluebee' ),
-				'role'    => __( 'VP of Growth, Bloom Health', 'bluebee' ),
-				'initial' => 'E',
-			),
-		);
-		$delay_classes = array( 'bb-animate--delay-1', 'bb-animate--delay-2', 'bb-animate--delay-3' );
 
-		echo "\n\t\t<!-- wp:group {\"className\":\"bb-testimonials__grid\",\"layout\":{\"type\":\"grid\",\"columnCount\":3}} -->";
-		echo "\n\t\t<div class=\"wp-block-group bb-testimonials__grid\">";
+			<!-- wp:group {"className":"bb-testimonials__grid","layout":{"type":"grid","columnCount":3}} -->
+			<div class="wp-block-group bb-testimonials__grid is-layout-grid">
 
-		foreach ( $fallback_testimonials as $idx => $t ) :
-			$delay    = isset( $delay_classes[ $idx ] ) ? ' ' . $delay_classes[ $idx ] : '';
-			$card_cls = 'bb-testimonial-card bb-animate' . $delay;
-			$quote    = esc_html( $t['quote'] );
-			$name     = esc_html( $t['name'] );
-			$role     = esc_html( $t['role'] );
-			$initial  = esc_html( $t['initial'] );
+				<!-- wp:group {"tagName":"article","className":"bb-testimonial-card bb-animate bb-animate--delay-1","style":{"spacing":{"padding":{"top":"2.5rem","bottom":"2.5rem","left":"2.5rem","right":"2.5rem"}}},"layout":{"type":"default"}} -->
+				<article class="wp-block-group bb-testimonial-card bb-animate bb-animate--delay-1" style="padding-top:2.5rem;padding-right:2.5rem;padding-bottom:2.5rem;padding-left:2.5rem">
 
-			echo "\n\t\t\t<!-- wp:group {\"tagName\":\"article\",\"className\":\"" . esc_attr( $card_cls ) . "\",\"style\":{\"spacing\":{\"padding\":{\"top\":\"2.5rem\",\"bottom\":\"2.5rem\",\"left\":\"2.5rem\",\"right\":\"2.5rem\"}}},\"layout\":{\"type\":\"default\"}} -->";
-			echo "\n\t\t\t<article class=\"wp-block-group " . esc_attr( $card_cls ) . "\" style=\"padding-top:2.5rem;padding-right:2.5rem;padding-bottom:2.5rem;padding-left:2.5rem\">";
+					<!-- wp:paragraph {"className":"bb-testimonial-card__quote"} -->
+					<p class="wp-block-paragraph bb-testimonial-card__quote"><?php echo esc_html__( 'Bluebee transformed how our audience sees us. The rebrand drove a 60% increase in brand recall within three months of launch — results we never thought possible.', 'bluebee' ); ?></p>
+					<!-- /wp:paragraph -->
 
-			echo "\n\t\t\t\t<!-- wp:paragraph {\"className\":\"bb-testimonial-card__quote\"} -->";
-			echo "\n\t\t\t\t<p class=\"wp-block-paragraph bb-testimonial-card__quote\">" . $quote . "</p>";
-			echo "\n\t\t\t\t<!-- /wp:paragraph -->";
+					<!-- wp:group {"className":"bb-testimonial-card__footer","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+					<div class="wp-block-group bb-testimonial-card__footer">
 
-			echo "\n\t\t\t\t<!-- wp:group {\"className\":\"bb-testimonial-card__footer\",\"layout\":{\"type\":\"flex\",\"flexWrap\":\"nowrap\",\"verticalAlignment\":\"center\"}} -->";
-			echo "\n\t\t\t\t<div class=\"wp-block-group bb-testimonial-card__footer\">";
+						<!-- wp:paragraph {"className":"bb-testimonial-card__avatar bb-testimonial-card__avatar--initials"} -->
+						<p class="wp-block-paragraph bb-testimonial-card__avatar bb-testimonial-card__avatar--initials" aria-hidden="true">S</p>
+						<!-- /wp:paragraph -->
 
-			echo "\n\t\t\t\t\t<!-- wp:paragraph {\"className\":\"bb-testimonial-card__avatar bb-testimonial-card__avatar--initials\"} -->";
-			echo "\n\t\t\t\t\t<p class=\"wp-block-paragraph bb-testimonial-card__avatar bb-testimonial-card__avatar--initials\" aria-hidden=\"true\">" . $initial . "</p>";
-			echo "\n\t\t\t\t\t<!-- /wp:paragraph -->";
+						<!-- wp:group {"className":"bb-testimonial-card__author","layout":{"type":"default"}} -->
+						<div class="wp-block-group bb-testimonial-card__author">
+							<!-- wp:paragraph {"className":"bb-testimonial-card__name"} -->
+							<p class="wp-block-paragraph bb-testimonial-card__name"><strong><?php echo esc_html__( 'Sarah Mitchell', 'bluebee' ); ?></strong></p>
+							<!-- /wp:paragraph -->
+							<!-- wp:paragraph {"className":"bb-testimonial-card__role"} -->
+							<p class="wp-block-paragraph bb-testimonial-card__role"><?php echo esc_html__( 'Chief Marketing Officer, Nova Skincare', 'bluebee' ); ?></p>
+							<!-- /wp:paragraph -->
+						</div>
+						<!-- /wp:group -->
 
-			echo "\n\t\t\t\t\t<!-- wp:group {\"className\":\"bb-testimonial-card__author\",\"layout\":{\"type\":\"default\"}} -->";
-			echo "\n\t\t\t\t\t<div class=\"wp-block-group bb-testimonial-card__author\">";
-			echo "\n\t\t\t\t\t\t<!-- wp:paragraph {\"className\":\"bb-testimonial-card__name\"} -->";
-			echo "\n\t\t\t\t\t\t<p class=\"wp-block-paragraph bb-testimonial-card__name\"><strong>" . $name . "</strong></p>";
-			echo "\n\t\t\t\t\t\t<!-- /wp:paragraph -->";
-			echo "\n\t\t\t\t\t\t<!-- wp:paragraph {\"className\":\"bb-testimonial-card__role\"} -->";
-			echo "\n\t\t\t\t\t\t<p class=\"wp-block-paragraph bb-testimonial-card__role\">" . $role . "</p>";
-			echo "\n\t\t\t\t\t\t<!-- /wp:paragraph -->";
-			echo "\n\t\t\t\t\t</div>";
-			echo "\n\t\t\t\t\t<!-- /wp:group -->";
+					</div>
+					<!-- /wp:group -->
 
-			echo "\n\t\t\t\t</div>";
-			echo "\n\t\t\t\t<!-- /wp:group -->";
+				</article>
+				<!-- /wp:group -->
 
-			echo "\n\t\t\t</article>";
-			echo "\n\t\t\t<!-- /wp:group -->";
-		endforeach;
+				<!-- wp:group {"tagName":"article","className":"bb-testimonial-card bb-animate bb-animate--delay-2","style":{"spacing":{"padding":{"top":"2.5rem","bottom":"2.5rem","left":"2.5rem","right":"2.5rem"}}},"layout":{"type":"default"}} -->
+				<article class="wp-block-group bb-testimonial-card bb-animate bb-animate--delay-2" style="padding-top:2.5rem;padding-right:2.5rem;padding-bottom:2.5rem;padding-left:2.5rem">
 
-		echo "\n\t\t</div>";
-		echo "\n\t\t<!-- /wp:group -->";
-		?>
+					<!-- wp:paragraph {"className":"bb-testimonial-card__quote"} -->
+					<p class="wp-block-paragraph bb-testimonial-card__quote"><?php echo esc_html__( 'The team\'s strategic thinking is unmatched. They don\'t just execute — they challenge your assumptions and push your brand further than you thought you could go.', 'bluebee' ); ?></p>
+					<!-- /wp:paragraph -->
+
+					<!-- wp:group {"className":"bb-testimonial-card__footer","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+					<div class="wp-block-group bb-testimonial-card__footer">
+
+						<!-- wp:paragraph {"className":"bb-testimonial-card__avatar bb-testimonial-card__avatar--initials"} -->
+						<p class="wp-block-paragraph bb-testimonial-card__avatar bb-testimonial-card__avatar--initials" aria-hidden="true">J</p>
+						<!-- /wp:paragraph -->
+
+						<!-- wp:group {"className":"bb-testimonial-card__author","layout":{"type":"default"}} -->
+						<div class="wp-block-group bb-testimonial-card__author">
+							<!-- wp:paragraph {"className":"bb-testimonial-card__name"} -->
+							<p class="wp-block-paragraph bb-testimonial-card__name"><strong><?php echo esc_html__( 'James Park', 'bluebee' ); ?></strong></p>
+							<!-- /wp:paragraph -->
+							<!-- wp:paragraph {"className":"bb-testimonial-card__role"} -->
+							<p class="wp-block-paragraph bb-testimonial-card__role"><?php echo esc_html__( 'Founder & CEO, Vault Technologies', 'bluebee' ); ?></p>
+							<!-- /wp:paragraph -->
+						</div>
+						<!-- /wp:group -->
+
+					</div>
+					<!-- /wp:group -->
+
+				</article>
+				<!-- /wp:group -->
+
+				<!-- wp:group {"tagName":"article","className":"bb-testimonial-card bb-animate bb-animate--delay-3","style":{"spacing":{"padding":{"top":"2.5rem","bottom":"2.5rem","left":"2.5rem","right":"2.5rem"}}},"layout":{"type":"default"}} -->
+				<article class="wp-block-group bb-testimonial-card bb-animate bb-animate--delay-3" style="padding-top:2.5rem;padding-right:2.5rem;padding-bottom:2.5rem;padding-left:2.5rem">
+
+					<!-- wp:paragraph {"className":"bb-testimonial-card__quote"} -->
+					<p class="wp-block-paragraph bb-testimonial-card__quote"><?php echo esc_html__( 'Working with Bluebee was the best decision we made all year. Our digital campaigns are now generating 3× the ROI of anything we ran before. Exceptional.', 'bluebee' ); ?></p>
+					<!-- /wp:paragraph -->
+
+					<!-- wp:group {"className":"bb-testimonial-card__footer","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+					<div class="wp-block-group bb-testimonial-card__footer">
+
+						<!-- wp:paragraph {"className":"bb-testimonial-card__avatar bb-testimonial-card__avatar--initials"} -->
+						<p class="wp-block-paragraph bb-testimonial-card__avatar bb-testimonial-card__avatar--initials" aria-hidden="true">E</p>
+						<!-- /wp:paragraph -->
+
+						<!-- wp:group {"className":"bb-testimonial-card__author","layout":{"type":"default"}} -->
+						<div class="wp-block-group bb-testimonial-card__author">
+							<!-- wp:paragraph {"className":"bb-testimonial-card__name"} -->
+							<p class="wp-block-paragraph bb-testimonial-card__name"><strong><?php echo esc_html__( 'Elena Torres', 'bluebee' ); ?></strong></p>
+							<!-- /wp:paragraph -->
+							<!-- wp:paragraph {"className":"bb-testimonial-card__role"} -->
+							<p class="wp-block-paragraph bb-testimonial-card__role"><?php echo esc_html__( 'VP of Growth, Bloom Health', 'bluebee' ); ?></p>
+							<!-- /wp:paragraph -->
+						</div>
+						<!-- /wp:group -->
+
+					</div>
+					<!-- /wp:group -->
+
+				</article>
+				<!-- /wp:group -->
+
+			</div>
+			<!-- /wp:group -->
+
 		<!-- /wp:query-no-results -->
 
 	</div>

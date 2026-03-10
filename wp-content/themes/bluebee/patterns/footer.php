@@ -8,8 +8,8 @@
  * Inserter: false
  */
 ?>
-<!-- wp:group {"tagName":"footer","className":"bb-footer","align":"full","style":{"color":{"background":"#0C0C0A","text":"#F7F4EF"},"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|50","left":"var:preset|spacing|60","right":"var:preset|spacing|60"}}},"layout":{"type":"constrained","wideSize":"1280px"}} -->
-<footer class="wp-block-group alignfull bb-footer" style="background-color:#0C0C0A;color:#F7F4EF;padding:var(--wp--preset--spacing--70) var(--wp--preset--spacing--60) var(--wp--preset--spacing--50)">
+<!-- wp:group {"tagName":"footer","className":"bb-footer","align":"full","style":{"color":{"background":"var:preset|color|black","text":"var:preset|color|cream"},"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|50","left":"var:preset|spacing|60","right":"var:preset|spacing|60"}}},"layout":{"type":"constrained","wideSize":"1280px"}} -->
+<footer class="wp-block-group alignfull bb-footer has-black-background-color has-cream-color has-text-color has-background" style="background-color:var(--wp--preset--color--black);color:var(--wp--preset--color--cream);padding:var(--wp--preset--spacing--70) var(--wp--preset--spacing--60) var(--wp--preset--spacing--50)">
 
 	<!-- wp:group {"className":"bb-footer__top","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|60"},"blockGap":"3rem"},"border":{"bottom":{"color":"rgba(255,255,255,0.1)","width":"1px"},"padding":{"bottom":"var:preset|spacing|60"}}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"flex-start"}} -->
 	<div class="wp-block-group bb-footer__top" style="margin-bottom:var(--wp--preset--spacing--60);border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:var(--wp--preset--spacing--60)">
@@ -17,7 +17,7 @@
 		<!-- wp:group {"className":"bb-footer__brand","style":{"spacing":{"blockGap":"1.25rem"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"flex-start","orientation":"vertical"}} -->
 		<div class="wp-block-group bb-footer__brand" style="gap:1.25rem">
 			<!-- wp:site-logo {"width":36,"style":{"filter":{"duotone":"unset"}}} /-->
-			<!-- wp:site-title {"style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontWeight":"800","fontSize":"1.1rem","letterSpacing":"-0.02em"},"color":{"text":"#F7F4EF"}}} /-->
+			<!-- wp:site-title /-->
 			<!-- wp:paragraph {"style":{"typography":{"fontSize":"0.9rem","lineHeight":"1.6"},"color":{"text":"rgba(247,244,239,0.5)"},"spacing":{"margin":{"top":"0.25rem"}}}} -->
 			<p style="font-size:0.9rem;line-height:1.6;color:rgba(247,244,239,0.5);margin-top:0.25rem"><?php echo esc_html__( 'Making brands unforgettable.', 'bluebee' ); ?></p>
 			<!-- /wp:paragraph -->

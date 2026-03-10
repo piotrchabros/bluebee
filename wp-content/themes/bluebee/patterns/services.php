@@ -36,18 +36,13 @@
 			<!-- wp:group {"tagName":"article","className":"bb-service-card bb-animate","style":{"border":{"left":{"color":"var:preset|color|border","width":"1px","style":"solid"}},"spacing":{"padding":{"top":"2.5rem","bottom":"2.5rem","left":"2rem","right":"2rem"}}},"layout":{"type":"default"}} -->
 			<article class="wp-block-group bb-service-card bb-animate" style="border-left-color:var(--wp--preset--color--border);border-left-width:1px;border-left-style:solid;padding-top:2.5rem;padding-right:2rem;padding-bottom:2.5rem;padding-left:2rem">
 
-				<!-- wp:group {"className":"bb-service-card__header","style":{"spacing":{"margin":{"bottom":"2rem"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
-				<div class="wp-block-group bb-service-card__header" style="margin-bottom:2rem">
-					<!-- wp:post-meta {"fieldName":"_bb_icon","showLabel":false,"className":"bb-service-card__icon"} /-->
-					<!-- wp:post-meta {"fieldName":"_bb_order","showLabel":false,"className":"bb-service-card__num"} /-->
-				</div>
-				<!-- /wp:group -->
+				<!-- wp:post-featured-image {"isLink":false,"className":"bb-service-card__icon","width":"48px","height":"48px","style":{"spacing":{"margin":{"bottom":"2rem"}}}} /-->
 
 				<!-- wp:post-title {"level":3,"isLink":true,"className":"bb-service-card__title","style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontWeight":"700","fontSize":"1.2rem","lineHeight":"1.2","letterSpacing":"-0.01em"},"spacing":{"margin":{"bottom":"1rem"}}}} /-->
 
 				<!-- wp:post-excerpt {"className":"bb-service-card__excerpt","style":{"typography":{"fontSize":"0.9rem","lineHeight":"1.7"},"color":{"text":"var:preset|color|gray"}}} /-->
 
-				<!-- wp:read-more {"className":"bb-service-card__link","style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontSize":"0.75rem","fontWeight":"600","letterSpacing":"0.08em","textTransform":"uppercase"},"color":{"text":"var:preset|color|blue"},"spacing":{"margin":{"top":"2rem"}}}} /-->
+				<!-- wp:read-more {"content":"<?php echo esc_attr__( 'Learn More →', 'bluebee' ); ?>","className":"bb-service-card__link"} /-->
 
 			</article>
 			<!-- /wp:group -->
@@ -68,16 +63,9 @@
 				echo "\n\t\t\t<!-- wp:group {\"tagName\":\"article\",\"className\":\"bb-service-card bb-animate\",\"style\":{\"border\":{\"left\":{\"color\":\"var:preset|color|border\",\"width\":\"1px\",\"style\":\"solid\"}},\"spacing\":{\"padding\":{\"top\":\"2.5rem\",\"bottom\":\"2.5rem\",\"left\":\"2rem\",\"right\":\"2rem\"}}},\"layout\":{\"type\":\"default\"}} -->";
 				echo "\n\t\t\t<article class=\"wp-block-group bb-service-card bb-animate\" style=\"border-left-color:var(--wp--preset--color--border);border-left-width:1px;border-left-style:solid;padding-top:2.5rem;padding-right:2rem;padding-bottom:2.5rem;padding-left:2rem\">";
 
-				echo "\n\t\t\t\t<!-- wp:group {\"className\":\"bb-service-card__header\",\"style\":{\"spacing\":{\"margin\":{\"bottom\":\"2rem\"}}},\"layout\":{\"type\":\"flex\",\"flexWrap\":\"nowrap\",\"justifyContent\":\"space-between\"}} -->";
-				echo "\n\t\t\t\t<div class=\"wp-block-group bb-service-card__header\" style=\"margin-bottom:2rem\">";
-				echo "\n\t\t\t\t\t<!-- wp:paragraph {\"className\":\"bb-service-card__icon\"} -->";
-				echo "\n\t\t\t\t\t<p class=\"wp-block-paragraph bb-service-card__icon\" aria-hidden=\"true\">" . esc_html( $svc['icon'] ) . "</p>";
-				echo "\n\t\t\t\t\t<!-- /wp:paragraph -->";
-				echo "\n\t\t\t\t\t<!-- wp:paragraph {\"className\":\"bb-service-card__num\"} -->";
-				echo "\n\t\t\t\t\t<p class=\"wp-block-paragraph bb-service-card__num\">" . esc_html( $svc['num'] ) . "</p>";
-				echo "\n\t\t\t\t\t<!-- /wp:paragraph -->";
-				echo "\n\t\t\t\t</div>";
-				echo "\n\t\t\t\t<!-- /wp:group -->";
+				echo "\n\t\t\t\t<!-- wp:paragraph {\"className\":\"bb-service-card__icon\",\"style\":{\"spacing\":{\"margin\":{\"bottom\":\"2rem\"}}}} -->";
+				echo "\n\t\t\t\t<p class=\"wp-block-paragraph bb-service-card__icon\" aria-hidden=\"true\" style=\"margin-bottom:2rem\">" . esc_html( $svc['icon'] ) . "</p>";
+				echo "\n\t\t\t\t<!-- /wp:paragraph -->";
 
 				echo "\n\t\t\t\t<!-- wp:heading {\"level\":3,\"className\":\"bb-service-card__title\",\"style\":{\"typography\":{\"fontFamily\":\"var(--wp--preset--font-family--heading)\",\"fontWeight\":\"700\",\"fontSize\":\"1.2rem\",\"lineHeight\":\"1.2\",\"letterSpacing\":\"-0.01em\"},\"spacing\":{\"margin\":{\"bottom\":\"1rem\"}}}} -->";
 				echo "\n\t\t\t\t<h3 class=\"wp-block-heading bb-service-card__title\" style=\"font-family:var(--wp--preset--font-family--heading);font-size:1.2rem;font-weight:700;line-height:1.2;letter-spacing:-0.01em;margin-bottom:1rem\">" . esc_html( $svc['title'] ) . "</h3>";

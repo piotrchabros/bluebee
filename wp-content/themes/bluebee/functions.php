@@ -203,13 +203,14 @@ function bluebee_register_post_types() {
 			'edit_item'          => __( 'Edit Testimonial',      'bluebee' ),
 			'menu_name'          => __( 'Testimonials',          'bluebee' ),
 		),
-		'public'            => false,
-		'show_ui'           => true,
-		'show_in_menu'      => true,
-		'menu_icon'         => 'dashicons-format-quote',
-		'menu_position'     => 7,
-		'supports'          => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
-		'show_in_rest'      => true,
+		'public'             => false,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'menu_icon'          => 'dashicons-format-quote',
+		'menu_position'      => 7,
+		'supports'           => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
+		'show_in_rest'       => true,
 	) );
 }
 add_action( 'init', 'bluebee_register_post_types' );

@@ -14,11 +14,11 @@
 	<div class="wp-block-group bb-section__header bb-animate" style="margin-bottom:var(--wp--preset--spacing--70)">
 		<!-- wp:group -->
 		<div class="wp-block-group">
-			<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontWeight":"600","fontSize":"0.72rem","letterSpacing":"0.18em","textTransform":"uppercase"},"color":{"text":"var:preset|color|blue"},"spacing":{"margin":{"bottom":"0.75rem"}}}} -->
-			<p class="has-text-color" style="font-family:var(--wp--preset--font-family--heading);font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--wp--preset--color--blue);margin-bottom:0.75rem"><?php echo esc_html__( 'What We Do', 'bluebee' ); ?></p>
+			<!-- wp:paragraph {"style":{"typography":{"fontWeight":"600","fontSize":"0.72rem","letterSpacing":"0.18em","textTransform":"uppercase"},"color":{"text":"var:preset|color|blue"},"spacing":{"margin":{"bottom":"0.75rem"}}}} -->
+			<p class="has-text-color" style="font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--wp--preset--color--blue);margin-bottom:0.75rem"><?php echo esc_html__( 'What We Do', 'bluebee' ); ?></p>
 			<!-- /wp:paragraph -->
-			<!-- wp:heading {"level":2,"style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontWeight":"800","fontSize":"clamp(2.5rem,5vw,4rem)","lineHeight":"0.95","letterSpacing":"-0.03em"}}} -->
-			<h2 class="wp-block-heading" style="font-family:var(--wp--preset--font-family--heading);font-size:clamp(2.5rem,5vw,4rem);font-weight:800;line-height:0.95;letter-spacing:-0.03em"><?php echo esc_html__( 'Services that move markets', 'bluebee' ); ?></h2>
+			<!-- wp:heading {"level":2,"style":{"typography":{"fontWeight":"800","fontSize":"clamp(2.5rem,5vw,4rem)","lineHeight":"0.95","letterSpacing":"-0.03em"}}} -->
+			<h2 class="wp-block-heading" style="font-size:clamp(2.5rem,5vw,4rem);font-weight:800;line-height:0.95;letter-spacing:-0.03em"><?php echo esc_html__( 'Services that move markets', 'bluebee' ); ?></h2>
 			<!-- /wp:heading -->
 		</div>
 		<!-- /wp:group -->
@@ -38,7 +38,7 @@
 
 				<!-- wp:post-featured-image {"isLink":false,"className":"bb-service-card__icon","width":"48px","height":"48px","style":{"spacing":{"margin":{"bottom":"2rem"}}}} /-->
 
-				<!-- wp:post-title {"level":3,"isLink":true,"className":"bb-service-card__title","style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontWeight":"700","fontSize":"1.2rem","lineHeight":"1.2","letterSpacing":"-0.01em"},"spacing":{"margin":{"bottom":"1rem"}}}} /-->
+				<!-- wp:post-title {"level":3,"isLink":true,"className":"bb-service-card__title","style":{"typography":{"fontWeight":"700","fontSize":"1.2rem","lineHeight":"1.2","letterSpacing":"-0.01em"},"spacing":{"margin":{"bottom":"1rem"}}}} /-->
 
 				<!-- wp:post-excerpt {"className":"bb-service-card__excerpt","style":{"typography":{"fontSize":"0.9rem","lineHeight":"1.7"},"color":{"text":"var:preset|color|gray"}}} /-->
 
@@ -67,8 +67,8 @@
 				echo "\n\t\t\t\t<p class=\"wp-block-paragraph bb-service-card__icon\" aria-hidden=\"true\" style=\"margin-bottom:2rem\">" . esc_html( $svc['icon'] ) . "</p>";
 				echo "\n\t\t\t\t<!-- /wp:paragraph -->";
 
-				echo "\n\t\t\t\t<!-- wp:heading {\"level\":3,\"className\":\"bb-service-card__title\",\"style\":{\"typography\":{\"fontFamily\":\"var(--wp--preset--font-family--heading)\",\"fontWeight\":\"700\",\"fontSize\":\"1.2rem\",\"lineHeight\":\"1.2\",\"letterSpacing\":\"-0.01em\"},\"spacing\":{\"margin\":{\"bottom\":\"1rem\"}}}} -->";
-				echo "\n\t\t\t\t<h3 class=\"wp-block-heading bb-service-card__title\" style=\"font-family:var(--wp--preset--font-family--heading);font-size:1.2rem;font-weight:700;line-height:1.2;letter-spacing:-0.01em;margin-bottom:1rem\">" . esc_html( $svc['title'] ) . "</h3>";
+				echo "\n\t\t\t\t<!-- wp:heading {\"level\":3,\"className\":\"bb-service-card__title\",\"style\":{\"typography\":{\"fontWeight\":\"700\",\"fontSize\":\"1.2rem\",\"lineHeight\":\"1.2\",\"letterSpacing\":\"-0.01em\"},\"spacing\":{\"margin\":{\"bottom\":\"1rem\"}}}} -->";
+				echo "\n\t\t\t\t<h3 class=\"wp-block-heading bb-service-card__title\" style=\"font-size:1.2rem;font-weight:700;line-height:1.2;letter-spacing:-0.01em;margin-bottom:1rem\">" . esc_html( $svc['title'] ) . "</h3>";
 				echo "\n\t\t\t\t<!-- /wp:heading -->";
 
 				echo "\n\t\t\t\t<!-- wp:paragraph {\"className\":\"bb-service-card__excerpt\",\"style\":{\"typography\":{\"fontSize\":\"0.9rem\",\"lineHeight\":\"1.7\"},\"color\":{\"text\":\"var:preset|color|gray\"}}} -->";

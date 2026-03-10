@@ -16,12 +16,12 @@
 		<!-- wp:column {"width":"50%","className":"bb-cta__left bb-animate"} -->
 		<div class="wp-block-column bb-cta__left bb-animate" style="flex-basis:50%">
 
-			<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontWeight":"600","fontSize":"0.72rem","letterSpacing":"0.18em","textTransform":"uppercase"},"color":{"text":"rgba(255,255,255,0.55)"},"spacing":{"margin":{"bottom":"1.25rem"}}}} -->
-			<p class="has-text-color" style="font-family:var(--wp--preset--font-family--heading);font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:1.25rem"><?php echo esc_html__( 'Start a Project', 'bluebee' ); ?></p>
+			<!-- wp:paragraph {"style":{"typography":{"fontWeight":"600","fontSize":"0.72rem","letterSpacing":"0.18em","textTransform":"uppercase"},"color":{"text":"rgba(255,255,255,0.55)"},"spacing":{"margin":{"bottom":"1.25rem"}}}} -->
+			<p class="has-text-color" style="font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:1.25rem"><?php echo esc_html__( 'Start a Project', 'bluebee' ); ?></p>
 			<!-- /wp:paragraph -->
 
-			<!-- wp:heading {"level":2,"style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontWeight":"800","fontSize":"clamp(2.5rem,5vw,4.5rem)","lineHeight":"0.93","letterSpacing":"-0.035em"},"color":{"text":"var:preset|color|white"},"spacing":{"margin":{"bottom":"2rem"}}}} -->
-			<h2 class="wp-block-heading has-text-color" style="font-family:var(--wp--preset--font-family--heading);font-size:clamp(2.5rem,5vw,4.5rem);font-weight:800;line-height:0.93;letter-spacing:-0.035em;color:var(--wp--preset--color--white);margin-bottom:2rem"><?php echo esc_html__( 'Ready to grow your brand?', 'bluebee' ); ?></h2>
+			<!-- wp:heading {"level":2,"style":{"typography":{"fontWeight":"800","fontSize":"clamp(2.5rem,5vw,4.5rem)","lineHeight":"0.93","letterSpacing":"-0.035em"},"color":{"text":"var:preset|color|white"},"spacing":{"margin":{"bottom":"2rem"}}}} -->
+			<h2 class="wp-block-heading has-text-color" style="font-size:clamp(2.5rem,5vw,4.5rem);font-weight:800;line-height:0.93;letter-spacing:-0.035em;color:var(--wp--preset--color--white);margin-bottom:2rem"><?php echo esc_html__( 'Ready to grow your brand?', 'bluebee' ); ?></h2>
 			<!-- /wp:heading -->
 
 			<!-- wp:paragraph {"style":{"typography":{"fontSize":"1.1rem","lineHeight":"1.65"},"color":{"text":"rgba(255,255,255,0.75)"},"spacing":{"margin":{"bottom":"3rem"}}}} -->
@@ -30,11 +30,11 @@
 
 			<!-- wp:group {"className":"bb-cta__contact-info","style":{"spacing":{"blockGap":"1.25rem"}}} -->
 			<div class="wp-block-group bb-cta__contact-info" style="gap:1.25rem">
-				<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontSize":"0.8rem","fontWeight":"600","letterSpacing":"0.08em","textTransform":"uppercase"},"color":{"text":"rgba(255,255,255,0.5)"}}} -->
-				<p class="has-text-color" style="font-family:var(--wp--preset--font-family--heading);font-size:0.8rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.5)"><?php echo esc_html__( 'Or reach us directly', 'bluebee' ); ?></p>
+				<!-- wp:paragraph {"style":{"typography":{"fontSize":"0.8rem","fontWeight":"600","letterSpacing":"0.08em","textTransform":"uppercase"},"color":{"text":"rgba(255,255,255,0.5)"}}} -->
+				<p class="has-text-color" style="font-size:0.8rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.5)"><?php echo esc_html__( 'Or reach us directly', 'bluebee' ); ?></p>
 				<!-- /wp:paragraph -->
-				<!-- wp:paragraph {"style":{"typography":{"fontSize":"1.1rem","fontFamily":"var(--wp--preset--font-family--heading)","fontWeight":"700"},"color":{"text":"var:preset|color|white"}}} -->
-				<p class="has-text-color" style="font-size:1.1rem;font-family:var(--wp--preset--font-family--heading);font-weight:700;color:var(--wp--preset--color--white)"><a href="mailto:hello@bluebee.agency" style="color:inherit;text-decoration:none">hello@bluebee.agency</a></p>
+				<!-- wp:paragraph {"style":{"typography":{"fontSize":"1.1rem","fontWeight":"700"},"color":{"text":"var:preset|color|white"}}} -->
+				<p class="has-text-color" style="font-size:1.1rem;font-weight:700;color:var(--wp--preset--color--white)"><a href="mailto:hello@bluebee.agency" style="color:inherit;text-decoration:none">hello@bluebee.agency</a></p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->

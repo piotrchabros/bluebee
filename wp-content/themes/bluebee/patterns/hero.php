@@ -13,12 +13,12 @@
 	<!-- wp:group {"className":"bb-hero__inner","style":{"spacing":{"padding":{"top":"10vh","right":"var:preset|spacing|60","bottom":"10vh","left":"var:preset|spacing|60"}}},"layout":{"type":"constrained","wideSize":"1280px"}} -->
 	<div class="wp-block-group bb-hero__inner" style="padding-top:10vh;padding-right:var(--wp--preset--spacing--60);padding-bottom:10vh;padding-left:var(--wp--preset--spacing--60)">
 
-		<!-- wp:paragraph {"className":"bb-hero__eyebrow bb-animate","style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontWeight":"600","fontSize":"0.72rem","letterSpacing":"0.18em","textTransform":"uppercase"},"color":{"text":"var:preset|color|blue"},"spacing":{"margin":{"bottom":"2rem"}}}} -->
-		<p class="bb-hero__eyebrow bb-animate has-text-color" style="font-family:var(--wp--preset--font-family--heading);font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--wp--preset--color--blue);margin-bottom:2rem"><?php echo esc_html__( 'Marketing Agency · Est. 2012', 'bluebee' ); ?></p>
+		<!-- wp:paragraph {"className":"bb-hero__eyebrow bb-animate","style":{"typography":{"fontWeight":"600","fontSize":"0.72rem","letterSpacing":"0.18em","textTransform":"uppercase"},"color":{"text":"var:preset|color|blue"},"spacing":{"margin":{"bottom":"2rem"}}}} -->
+		<p class="bb-hero__eyebrow bb-animate has-text-color" style="font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--wp--preset--color--blue);margin-bottom:2rem"><?php echo esc_html__( 'Marketing Agency · Est. 2012', 'bluebee' ); ?></p>
 		<!-- /wp:paragraph -->
 
-		<!-- wp:heading {"level":1,"className":"bb-hero__heading bb-animate bb-animate--delay-1","style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontWeight":"800","fontSize":"clamp(3.5rem,8.5vw,7.5rem)","lineHeight":"0.93","letterSpacing":"-0.035em"},"spacing":{"margin":{"top":"0","bottom":"3rem"}}}} -->
-		<h1 class="wp-block-heading bb-hero__heading bb-animate bb-animate--delay-1" style="font-family:var(--wp--preset--font-family--heading);font-size:clamp(3.5rem,8.5vw,7.5rem);font-weight:800;line-height:0.93;letter-spacing:-0.035em;margin-top:0;margin-bottom:3rem"><?php echo esc_html__( 'We Make Brands Unforgettable', 'bluebee' ); ?></h1>
+		<!-- wp:heading {"level":1,"className":"bb-hero__heading bb-animate bb-animate--delay-1","style":{"typography":{"fontWeight":"800","fontSize":"clamp(3.5rem,8.5vw,7.5rem)","lineHeight":"0.93","letterSpacing":"-0.035em"},"spacing":{"margin":{"top":"0","bottom":"3rem"}}}} -->
+		<h1 class="wp-block-heading bb-hero__heading bb-animate bb-animate--delay-1" style="font-size:clamp(3.5rem,8.5vw,7.5rem);font-weight:800;line-height:0.93;letter-spacing:-0.035em;margin-top:0;margin-bottom:3rem"><?php echo esc_html__( 'We Make Brands Unforgettable', 'bluebee' ); ?></h1>
 		<!-- /wp:heading -->
 
 		<!-- wp:columns {"className":"bb-hero__bottom bb-animate bb-animate--delay-2"} -->
@@ -50,33 +50,33 @@
 
 				<!-- wp:group {"className":"bb-stat-row","style":{"border":{"top":{"color":"var:preset|color|border","width":"1px","style":"solid"}},"spacing":{"padding":{"top":"1.5rem","right":"0","bottom":"1.5rem","left":"0"}}}} -->
 				<div class="wp-block-group bb-stat-row" style="border-top-color:var(--wp--preset--color--border);border-top-width:1px;border-top-style:solid;padding-top:1.5rem;padding-right:0;padding-bottom:1.5rem;padding-left:0">
-					<!-- wp:paragraph {"className":"bb-stat-number","style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontWeight":"800","fontSize":"clamp(2.5rem,4vw,3.5rem)","lineHeight":"1","letterSpacing":"-0.025em"},"spacing":{"margin":{"top":"0","bottom":"0.4rem"}}}} -->
-					<p class="bb-stat-number" style="font-family:var(--wp--preset--font-family--heading);font-size:clamp(2.5rem,4vw,3.5rem);font-weight:800;line-height:1;letter-spacing:-0.025em;margin-top:0;margin-bottom:0.4rem">200+</p>
+					<!-- wp:paragraph {"className":"bb-stat-number","style":{"typography":{"fontWeight":"800","fontSize":"clamp(2.5rem,4vw,3.5rem)","lineHeight":"1","letterSpacing":"-0.025em"},"spacing":{"margin":{"top":"0","bottom":"0.4rem"}}}} -->
+					<p class="bb-stat-number" style="font-size:clamp(2.5rem,4vw,3.5rem);font-weight:800;line-height:1;letter-spacing:-0.025em;margin-top:0;margin-bottom:0.4rem">200+</p>
 					<!-- /wp:paragraph -->
-					<!-- wp:paragraph {"className":"bb-stat-label","style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontSize":"0.72rem","fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"},"color":{"text":"var:preset|color|gray"},"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-					<p class="bb-stat-label has-text-color" style="font-family:var(--wp--preset--font-family--heading);font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--wp--preset--color--gray);margin-top:0;margin-bottom:0"><?php echo esc_html__( 'Clients Worldwide', 'bluebee' ); ?></p>
+					<!-- wp:paragraph {"className":"bb-stat-label","style":{"typography":{"fontSize":"0.72rem","fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"},"color":{"text":"var:preset|color|gray"},"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
+					<p class="bb-stat-label has-text-color" style="font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--wp--preset--color--gray);margin-top:0;margin-bottom:0"><?php echo esc_html__( 'Clients Worldwide', 'bluebee' ); ?></p>
 					<!-- /wp:paragraph -->
 				</div>
 				<!-- /wp:group -->
 
 				<!-- wp:group {"className":"bb-stat-row","style":{"border":{"top":{"color":"var:preset|color|border","width":"1px","style":"solid"}},"spacing":{"padding":{"top":"1.5rem","right":"0","bottom":"1.5rem","left":"0"}}}} -->
 				<div class="wp-block-group bb-stat-row" style="border-top-color:var(--wp--preset--color--border);border-top-width:1px;border-top-style:solid;padding-top:1.5rem;padding-right:0;padding-bottom:1.5rem;padding-left:0">
-					<!-- wp:paragraph {"className":"bb-stat-number","style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontWeight":"800","fontSize":"clamp(2.5rem,4vw,3.5rem)","lineHeight":"1","letterSpacing":"-0.025em"},"spacing":{"margin":{"top":"0","bottom":"0.4rem"}}}} -->
-					<p class="bb-stat-number" style="font-family:var(--wp--preset--font-family--heading);font-size:clamp(2.5rem,4vw,3.5rem);font-weight:800;line-height:1;letter-spacing:-0.025em;margin-top:0;margin-bottom:0.4rem">12</p>
+					<!-- wp:paragraph {"className":"bb-stat-number","style":{"typography":{"fontWeight":"800","fontSize":"clamp(2.5rem,4vw,3.5rem)","lineHeight":"1","letterSpacing":"-0.025em"},"spacing":{"margin":{"top":"0","bottom":"0.4rem"}}}} -->
+					<p class="bb-stat-number" style="font-size:clamp(2.5rem,4vw,3.5rem);font-weight:800;line-height:1;letter-spacing:-0.025em;margin-top:0;margin-bottom:0.4rem">12</p>
 					<!-- /wp:paragraph -->
-					<!-- wp:paragraph {"className":"bb-stat-label","style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontSize":"0.72rem","fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"},"color":{"text":"var:preset|color|gray"},"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-					<p class="bb-stat-label has-text-color" style="font-family:var(--wp--preset--font-family--heading);font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--wp--preset--color--gray);margin-top:0;margin-bottom:0"><?php echo esc_html__( 'Years of Experience', 'bluebee' ); ?></p>
+					<!-- wp:paragraph {"className":"bb-stat-label","style":{"typography":{"fontSize":"0.72rem","fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"},"color":{"text":"var:preset|color|gray"},"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
+					<p class="bb-stat-label has-text-color" style="font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--wp--preset--color--gray);margin-top:0;margin-bottom:0"><?php echo esc_html__( 'Years of Experience', 'bluebee' ); ?></p>
 					<!-- /wp:paragraph -->
 				</div>
 				<!-- /wp:group -->
 
 				<!-- wp:group {"className":"bb-stat-row","style":{"border":{"top":{"color":"var:preset|color|border","width":"1px","style":"solid"},"bottom":{"color":"var:preset|color|border","width":"1px","style":"solid"}},"spacing":{"padding":{"top":"1.5rem","right":"0","bottom":"1.5rem","left":"0"}}}} -->
 				<div class="wp-block-group bb-stat-row" style="border-top-color:var(--wp--preset--color--border);border-top-width:1px;border-top-style:solid;border-bottom-color:var(--wp--preset--color--border);border-bottom-width:1px;border-bottom-style:solid;padding-top:1.5rem;padding-right:0;padding-bottom:1.5rem;padding-left:0">
-					<!-- wp:paragraph {"className":"bb-stat-number","style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontWeight":"800","fontSize":"clamp(2.5rem,4vw,3.5rem)","lineHeight":"1","letterSpacing":"-0.025em"},"spacing":{"margin":{"top":"0","bottom":"0.4rem"}}}} -->
-					<p class="bb-stat-number" style="font-family:var(--wp--preset--font-family--heading);font-size:clamp(2.5rem,4vw,3.5rem);font-weight:800;line-height:1;letter-spacing:-0.025em;margin-top:0;margin-bottom:0.4rem">98%</p>
+					<!-- wp:paragraph {"className":"bb-stat-number","style":{"typography":{"fontWeight":"800","fontSize":"clamp(2.5rem,4vw,3.5rem)","lineHeight":"1","letterSpacing":"-0.025em"},"spacing":{"margin":{"top":"0","bottom":"0.4rem"}}}} -->
+					<p class="bb-stat-number" style="font-size:clamp(2.5rem,4vw,3.5rem);font-weight:800;line-height:1;letter-spacing:-0.025em;margin-top:0;margin-bottom:0.4rem">98%</p>
 					<!-- /wp:paragraph -->
-					<!-- wp:paragraph {"className":"bb-stat-label","style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontSize":"0.72rem","fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"},"color":{"text":"var:preset|color|gray"},"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-					<p class="bb-stat-label has-text-color" style="font-family:var(--wp--preset--font-family--heading);font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--wp--preset--color--gray);margin-top:0;margin-bottom:0"><?php echo esc_html__( 'Client Retention Rate', 'bluebee' ); ?></p>
+					<!-- wp:paragraph {"className":"bb-stat-label","style":{"typography":{"fontSize":"0.72rem","fontWeight":"600","letterSpacing":"0.12em","textTransform":"uppercase"},"color":{"text":"var:preset|color|gray"},"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
+					<p class="bb-stat-label has-text-color" style="font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--wp--preset--color--gray);margin-top:0;margin-bottom:0"><?php echo esc_html__( 'Client Retention Rate', 'bluebee' ); ?></p>
 					<!-- /wp:paragraph -->
 				</div>
 				<!-- /wp:group -->

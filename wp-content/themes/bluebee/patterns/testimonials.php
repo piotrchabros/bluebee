@@ -14,11 +14,11 @@
 	<div class="wp-block-group bb-section__header bb-animate" style="margin-bottom:var(--wp--preset--spacing--70)">
 		<!-- wp:group -->
 		<div class="wp-block-group">
-			<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontWeight":"600","fontSize":"0.72rem","letterSpacing":"0.18em","textTransform":"uppercase"},"color":{"text":"var:preset|color|blue"},"spacing":{"margin":{"bottom":"0.75rem"}}}} -->
-			<p class="has-text-color" style="font-family:var(--wp--preset--font-family--heading);font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--wp--preset--color--blue);margin-bottom:0.75rem"><?php echo esc_html__( 'Client Love', 'bluebee' ); ?></p>
+			<!-- wp:paragraph {"style":{"typography":{"fontWeight":"600","fontSize":"0.72rem","letterSpacing":"0.18em","textTransform":"uppercase"},"color":{"text":"var:preset|color|blue"},"spacing":{"margin":{"bottom":"0.75rem"}}}} -->
+			<p class="has-text-color" style="font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--wp--preset--color--blue);margin-bottom:0.75rem"><?php echo esc_html__( 'Client Love', 'bluebee' ); ?></p>
 			<!-- /wp:paragraph -->
-			<!-- wp:heading {"level":2,"style":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontWeight":"800","fontSize":"clamp(2.5rem,5vw,4rem)","lineHeight":"0.95","letterSpacing":"-0.03em"}}} -->
-			<h2 class="wp-block-heading" style="font-family:var(--wp--preset--font-family--heading);font-size:clamp(2.5rem,5vw,4rem);font-weight:800;line-height:0.95;letter-spacing:-0.03em"><?php echo esc_html__( 'What they say', 'bluebee' ); ?></h2>
+			<!-- wp:heading {"level":2,"style":{"typography":{"fontWeight":"800","fontSize":"clamp(2.5rem,5vw,4rem)","lineHeight":"0.95","letterSpacing":"-0.03em"}}} -->
+			<h2 class="wp-block-heading" style="font-size:clamp(2.5rem,5vw,4rem);font-weight:800;line-height:0.95;letter-spacing:-0.03em"><?php echo esc_html__( 'What they say', 'bluebee' ); ?></h2>
 			<!-- /wp:heading -->
 		</div>
 		<!-- /wp:group -->
@@ -57,7 +57,6 @@
 		<!-- /wp:post-template -->
 
 		<!-- wp:query-no-results -->
-		<!-- wp:html -->
 		<?php
 		$fallback_testimonials = array(
 			array(
@@ -79,22 +78,54 @@
 				'initial' => 'E',
 			),
 		);
+		$delay_classes = array( 'bb-animate--delay-1', 'bb-animate--delay-2', 'bb-animate--delay-3' );
+
+		echo "\n\t\t<!-- wp:group {\"className\":\"bb-testimonials__grid\",\"layout\":{\"type\":\"grid\",\"columnCount\":3}} -->";
+		echo "\n\t\t<div class=\"wp-block-group bb-testimonials__grid\">";
+
+		foreach ( $fallback_testimonials as $idx => $t ) :
+			$delay    = isset( $delay_classes[ $idx ] ) ? ' ' . $delay_classes[ $idx ] : '';
+			$card_cls = 'bb-testimonial-card bb-animate' . $delay;
+			$quote    = esc_html( $t['quote'] );
+			$name     = esc_html( $t['name'] );
+			$role     = esc_html( $t['role'] );
+			$initial  = esc_html( $t['initial'] );
+
+			echo "\n\t\t\t<!-- wp:group {\"tagName\":\"article\",\"className\":\"" . esc_attr( $card_cls ) . "\",\"style\":{\"spacing\":{\"padding\":{\"top\":\"2.5rem\",\"bottom\":\"2.5rem\",\"left\":\"2.5rem\",\"right\":\"2.5rem\"}}},\"layout\":{\"type\":\"default\"}} -->";
+			echo "\n\t\t\t<article class=\"wp-block-group " . esc_attr( $card_cls ) . "\" style=\"padding-top:2.5rem;padding-right:2.5rem;padding-bottom:2.5rem;padding-left:2.5rem\">";
+
+			echo "\n\t\t\t\t<!-- wp:paragraph {\"className\":\"bb-testimonial-card__quote\"} -->";
+			echo "\n\t\t\t\t<p class=\"wp-block-paragraph bb-testimonial-card__quote\">" . $quote . "</p>";
+			echo "\n\t\t\t\t<!-- /wp:paragraph -->";
+
+			echo "\n\t\t\t\t<!-- wp:group {\"className\":\"bb-testimonial-card__footer\",\"layout\":{\"type\":\"flex\",\"flexWrap\":\"nowrap\",\"verticalAlignment\":\"center\"}} -->";
+			echo "\n\t\t\t\t<div class=\"wp-block-group bb-testimonial-card__footer\">";
+
+			echo "\n\t\t\t\t\t<!-- wp:paragraph {\"className\":\"bb-testimonial-card__avatar bb-testimonial-card__avatar--initials\"} -->";
+			echo "\n\t\t\t\t\t<p class=\"wp-block-paragraph bb-testimonial-card__avatar bb-testimonial-card__avatar--initials\" aria-hidden=\"true\">" . $initial . "</p>";
+			echo "\n\t\t\t\t\t<!-- /wp:paragraph -->";
+
+			echo "\n\t\t\t\t\t<!-- wp:group {\"className\":\"bb-testimonial-card__author\",\"layout\":{\"type\":\"default\"}} -->";
+			echo "\n\t\t\t\t\t<div class=\"wp-block-group bb-testimonial-card__author\">";
+			echo "\n\t\t\t\t\t\t<!-- wp:paragraph {\"className\":\"bb-testimonial-card__name\"} -->";
+			echo "\n\t\t\t\t\t\t<p class=\"wp-block-paragraph bb-testimonial-card__name\"><strong>" . $name . "</strong></p>";
+			echo "\n\t\t\t\t\t\t<!-- /wp:paragraph -->";
+			echo "\n\t\t\t\t\t\t<!-- wp:paragraph {\"className\":\"bb-testimonial-card__role\"} -->";
+			echo "\n\t\t\t\t\t\t<p class=\"wp-block-paragraph bb-testimonial-card__role\">" . $role . "</p>";
+			echo "\n\t\t\t\t\t\t<!-- /wp:paragraph -->";
+			echo "\n\t\t\t\t\t</div>";
+			echo "\n\t\t\t\t\t<!-- /wp:group -->";
+
+			echo "\n\t\t\t\t</div>";
+			echo "\n\t\t\t\t<!-- /wp:group -->";
+
+			echo "\n\t\t\t</article>";
+			echo "\n\t\t\t<!-- /wp:group -->";
+		endforeach;
+
+		echo "\n\t\t</div>";
+		echo "\n\t\t<!-- /wp:group -->";
 		?>
-		<div class="bb-testimonials__grid">
-			<?php foreach ( $fallback_testimonials as $idx => $t ) : ?>
-			<blockquote class="bb-testimonial-card bb-animate bb-animate--delay-<?php echo $idx + 1; ?>">
-				<p class="bb-testimonial-card__quote"><?php echo esc_html( $t['quote'] ); ?></p>
-				<footer class="bb-testimonial-card__footer">
-					<div class="bb-testimonial-card__avatar bb-testimonial-card__avatar--initials" aria-hidden="true"><?php echo esc_html( $t['initial'] ); ?></div>
-					<div class="bb-testimonial-card__author">
-						<strong class="bb-testimonial-card__name"><?php echo esc_html( $t['name'] ); ?></strong>
-						<span class="bb-testimonial-card__role"><?php echo esc_html( $t['role'] ); ?></span>
-					</div>
-				</footer>
-			</blockquote>
-			<?php endforeach; ?>
-		</div>
-		<!-- /wp:html -->
 		<!-- /wp:query-no-results -->
 
 	</div>

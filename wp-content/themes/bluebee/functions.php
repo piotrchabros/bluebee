@@ -271,6 +271,46 @@ function bluebee_register_meta() {
 add_action( 'init', 'bluebee_register_meta' );
 
 /* =========================================================
+   5b. CUSTOM BLOCKS (server-side rendered)
+   ========================================================= */
+
+/**
+ * Renders the testimonial author block inside a Query Loop.
+ * Outputs the author name and title stored in CPT meta fields.
+ */
+function bluebee_render_testimonial_author( $attributes, $content, $block ) {
+	$post_id = isset( $block->context['postId'] ) ? (int) $block->context['postId'] : 0;
+	if ( ! $post_id ) {
+		return '';
+	}
+
+	$name  = get_post_meta( $post_id, '_bb_author_name', true );
+	$title = get_post_meta( $post_id, '_bb_author_title', true );
+
+	if ( ! $name && ! $title ) {
+		return '';
+	}
+
+	$out = '<div class="wp-block-bluebee-testimonial-author bb-testimonial-card__author">';
+	if ( $name ) {
+		$out .= '<p class="bb-testimonial-card__name"><strong>' . esc_html( $name ) . '</strong></p>';
+	}
+	if ( $title ) {
+		$out .= '<p class="bb-testimonial-card__role">' . esc_html( $title ) . '</p>';
+	}
+	$out .= '</div>';
+
+	return $out;
+}
+
+add_action( 'init', function () {
+	register_block_type( 'bluebee/testimonial-author', array(
+		'render_callback' => 'bluebee_render_testimonial_author',
+		'uses_context'    => array( 'postId', 'postType' ),
+	) );
+} );
+
+/* =========================================================
    5. CUSTOM TAXONOMIES
    ========================================================= */
 

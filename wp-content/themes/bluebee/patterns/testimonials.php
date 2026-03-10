@@ -40,13 +40,7 @@
 
 					<!-- wp:post-featured-image {"isLink":false,"width":"40px","height":"40px","className":"bb-testimonial-card__avatar","style":{"border":{"radius":"50%"}}} /-->
 
-					<!-- wp:group {"className":"bb-testimonial-card__author","layout":{"type":"default"}} -->
-					<div class="wp-block-group bb-testimonial-card__author">
-						<!-- wp:post-meta {"fieldName":"_bb_author_name","showLabel":false,"className":"bb-testimonial-card__name"} /-->
-						<!-- wp:post-meta {"fieldName":"_bb_author_title","showLabel":false,"className":"bb-testimonial-card__role"} /-->
-						<!-- wp:post-meta {"fieldName":"_bb_author_company","showLabel":false,"className":"bb-testimonial-card__company"} /-->
-					</div>
-					<!-- /wp:group -->
+					<!-- wp:bluebee/testimonial-author /-->
 
 				</div>
 				<!-- /wp:group -->

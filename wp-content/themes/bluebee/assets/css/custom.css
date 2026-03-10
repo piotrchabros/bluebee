@@ -161,7 +161,17 @@ a { transition: color var(--bb-duration-fast) var(--bb-ease); }
 .bb-animate--delay-4 { --bb-delay: 0.4s; }
 
 /* ── Header ─────────────────────────────────────────────────── */
+/* Template-part outer wrapper must also be sticky so .bb-header can stick within the viewport */
+body > header.wp-block-template-part {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+}
+
 .bb-header {
+	position: sticky !important;
+	top: 0 !important;
+	z-index: 100;
 	/* Override the hardcoded rgba inline style with a dynamic preset-linked value */
 	background-color: color-mix(in srgb, var(--bb-cream) 92%, transparent) !important;
 	backdrop-filter: blur(16px) saturate(180%);
